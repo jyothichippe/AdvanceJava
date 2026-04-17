@@ -2,6 +2,8 @@ package org.jsp.SpringbootThird.controller;
 
 import java.util.List;
 
+
+
 import org.jsp.SpringbootThird.dto.User;
 import org.jsp.SpringbootThird.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins ="*")
+@RestController
 public class UserController {
 	
 	@Autowired
@@ -39,7 +41,7 @@ public class UserController {
 		//	System.out.println(id);
 	}
 	@GetMapping("/login")
-	public boolean login(@RequestParam String email, String password) {
+	public boolean login(@RequestParam String email,@RequestParam String password) {
 		return service.login(email, password);
 		//		System.out.println(email);
 //		System.out.println(password);
